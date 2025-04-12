@@ -15,6 +15,12 @@ void main() {
 	vertex.xy -= (1. - vertex.z) * (1. - vertex.z) * offset;
 	// longer
 	vertex.z *= 2.; 
-	gl_Position = vec4(vertex, 1.);
+	mat4 p = mat4(
+		1.,	0.,	0.,	0.,
+		0.,	1.,	0.,	0.,
+		0.,	0.,	1.,	-1.,
+		0.,	0.,	-1.3,	2.7
+	);
+	gl_Position = p * vec4(vertex, 1.);
 	uv = vertexUv;
 }`

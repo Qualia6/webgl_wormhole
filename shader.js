@@ -6,7 +6,7 @@ const vertexBufferByteSize = 5 * Float32Array.BYTES_PER_ELEMENT
 const vertexBufferPositionByteOffset = 0 * Float32Array.BYTES_PER_ELEMENT
 const vertexBufferUvByteOffset = 3 * Float32Array.BYTES_PER_ELEMENT
 
-const vertexBuffer = generateCylinderVertices(32, 32)// position vec3, uv vec2
+const vertexBuffer = generateCylinderVertices(19, 16)// position vec3, uv vec2
 
 const vertexGpuBuffer = gl.createBuffer()
 // ARRAY_BUFFER because vertex data
@@ -15,7 +15,7 @@ const vertexGpuBuffer = gl.createBuffer()
 gl.bindBuffer(gl.ARRAY_BUFFER, vertexGpuBuffer)
 gl.bufferData(gl.ARRAY_BUFFER, vertexBuffer, gl.STATIC_DRAW)
 
-const indexBuffer = generateCylinderIndices(32, 32);
+const indexBuffer = generateCylinderIndices(19, 16);
 
 const indexGpuBuffer = gl.createBuffer()
 // ELEMENT_ARRAY_BUFFER because index of vertices data
